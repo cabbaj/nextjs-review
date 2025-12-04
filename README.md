@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Basic NextJS
 
-## Getting Started
+### Client component
 
-First, run the development server:
+- Use for useState, useEffect (lifecycle)
+- Event handler (onClick, onChange)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Server component (NextJS use this by default)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Use for Fetch data or API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### loading.js
 
-## Learn More
+- This page will show while page loading
 
-To learn more about Next.js, take a look at the following resources:
+### error.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- This page will show when error occur
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Params (This is Promise)
 
-## Deploy on Vercel
+- When get data from params you must use async-await
+- Can use destructuring like this const { id } = await params;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Image
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Use \<Image \/\>
+- If use external URL should be configure in next.config.ts file
+- If not use by define path
+
+## Backend
+
+### CRUD have 2 way to use
+
+- Client-Side it will use useState and call api to backend
+- Server-side it will use external function to handle it and client-side send fomData to server-side
+
+### revalidatePath(“/path”)
+
+- Use for clear the data cache
+
+### useActionState() ex.form page
+
+to show users feedback
+
+- Use for access the return from function
+
+**Output:**
+
+- “message” is value of return from createUser function (“User Created”)
+- “formAction” use on when submitted it will call createUser function
+
+**Input:**
+
+- “createUser” is function what you want to call
+- “null” is initialState of message
+- Must to define “prevState”
+- Value of prevState is null before submit because we define to null on useActionState
+
+### useFormStatus()
+Inform status from form like a pending
+- Use for component inside form like a button
+- This is data of this function
+
+### Utils Folder
+Use for store the function for import to use
+
+### Api folder
+Use for store api handlers
+
+### {} = destructuring
+Use for select function or variable you want to use by specific
+- That object have many properties so you want to choose what you want
+
+### Middleware
+Every path will check by middleware
+- It’s on top level of project
