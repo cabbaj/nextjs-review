@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req: NextResponse) {
+export function proxy(req: NextResponse) {
   console.log("middle");
 //   return NextResponse.redirect(new URL("/", req.url));
 }

@@ -1,4 +1,4 @@
-// this file store the function for import
+// this server action that store the function for import
 "use server";
 
 import { revalidatePath } from "next/cache";

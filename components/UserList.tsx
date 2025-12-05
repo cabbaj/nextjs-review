@@ -1,4 +1,4 @@
-import { fetchUser } from "@/utils/user";
+import { fetchUser} from "@/utils/user";
 
 export default async function UserList() {
   const users = await fetchUser();

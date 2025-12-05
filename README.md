@@ -60,20 +60,31 @@ to show users feedback
 - Value of prevState is null before submit because we define to null on useActionState
 
 ### useFormStatus()
+
 Inform status from form like a pending
 - Use for component inside form like a button
 - This is data of this function
 
 ### Utils Folder
-Use for store the function for import to use
+
+it's a server action that handles form submission, and actions in app.  
+you can store the function external and import to use in client component, you dont need to use useState for store the value to show you can show value that received from server action
+- Use for store the function for import to use
+- POST
 
 ### Api folder
-Use for store api handlers
+
+it's route handlers
+- Use for store api handlers
+- call via http request
+- GET, POST
 
 ### {} = destructuring
+
 Use for select function or variable you want to use by specific
 - That object have many properties so you want to choose what you want
 
-### Middleware
+### Proxy (middleware)
+
 Every path will check by middleware
 - It’s on top level of project

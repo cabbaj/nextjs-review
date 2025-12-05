@@ -5,8 +5,8 @@ import { useFormStatus } from "react-dom"; // use for show the status when click
 const SubmitButton = () => {
   const { pending } = useFormStatus();
 
-  return <button type="submit" disabled={pending}>
-    {pending ? "Submitting...." : "Submit"}
-  </button>;
+  return (
+    <button disabled={pending}>{pending ? "Submitting...." : "Submit"}</button>
+  );
 };
 export default SubmitButton;
